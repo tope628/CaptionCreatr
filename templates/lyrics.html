@@ -13,11 +13,15 @@
           <div class="product-card">
             <figure>
 		    <a href="{{ url}}">
-		    <img src="{{ thumbnail }}" onerror="{{ url_for('static', filename='img/default.jpg') }}">
+			    <img src="{{ thumbnail }}" onerror="this.onerror=null;this.src='{{ url_for('static', filename='img/default.jpg') }}';" class="th" >
 		    </a> </figure>
 
-	    <a href="{{ url}}">
-            <span class="price">
+	    <a href="{{ url}}" style="text-decoration:none;
+	    color:black;">
+            <span class="price" style="margin-bottom: 20px;
+    display: block;
+    font-size: 15px;
+    margin-left: 50px;">
 		    {{ song }}
             </span>
 	    </a>

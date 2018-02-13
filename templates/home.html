@@ -10,10 +10,14 @@
 	<div class="header">
 		<img src="{{ url_for('static', filename='img/CapCre.png') }}">
 		</div>
+<div class="text">
+	<h2> An Instagram Marketing Tool</h2>
+	<p> Engage users with a caption generated from your favorite songs! <p>
+</div>
 <div class="wrap">
 <form action="{{ url_for('search') }}" method="post">
    <div class="search">
-      <input type="text" class="searchTerm" name="hashtag" placeholder="What are you looking for?">
+      <input type="text" class="searchTerm" name="hashtag" placeholder="What are you looking for? #hashtags, artist, description">
       <button type="submit" class="searchButton">
         <i class="fa fa-search"></i>
      </button>
@@ -25,7 +29,7 @@
 	</form>
    </div>
 </div>
-<div>
+<div class="lyrics">
 	{% block content %}{% endblock %}
 </div>
 </body>

@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 import billboard
 from bs4 import BeautifulSoup
 import random
+import re
 import requests
 import os
 from profanityfilter import ProfanityFilter
@@ -73,10 +74,12 @@ def print_lyrics(r):
     page_url = "http://genius.com" + path
     page = requests.get(page_url)
     html = BeautifulSoup(page.text, "html.parser")
-    lyrics = str(html.find("div", class_="lyrics").text)
-    lyrics = lyrics.replace('\n', '. ')
+    lyrics = html.find("div", class_="lyrics").get_text().encode('ascii','ignore').decode('ascii')                
+    lyrics = re.sub('\[.*\]','',lyrics) # Remove [Verse] and [Bridge] stuff
+    lyrics = re.sub('\n{2}','\n',lyrics)  # Remove gaps between verses        
+    lyrics = str(lyrics).strip('\n')
     lyrics = pf.censor(lyrics)
-    return lyrics[:150]
+    return lyrics[:150] + "..."
 
 
 def song_info(r):
