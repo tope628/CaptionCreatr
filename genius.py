@@ -41,9 +41,10 @@ def search():
             data = {'q': hashtag}
             hash_db = hashtag.split(" ")
             for word in hash_db:
-                hashes = Hash(word)
-                db.session.add(hashes)
-                db.session.commit()
+                hashes = Hash()
+                hashes.hashtag = word
+            db.session.add(hashes)
+            db.session.commit()
         else:
             return random100()
     r = requests.get(search_url, params=data, headers=headers).json()
