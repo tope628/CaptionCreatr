@@ -24,10 +24,7 @@ pycodestyle==2.3.1
 pycurl==7.19.3
 pyflakes==1.6.0
 pyparsing==2.2.0
-python-apt===0.9.3.5ubuntu2
-rauth==0.7.3
 requests==2.18.4
-six==1.11.0
 SQLAlchemy==1.1.15
 urllib3==1.22
 virtualenv==15.1.0
