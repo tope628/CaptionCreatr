@@ -1,1 +1,1 @@
-web: gunicorn CaptionCrawlr.genius:app 
+web: gunicorn genius:app 
