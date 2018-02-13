@@ -41,10 +41,10 @@ def search():
             data = {'q': hashtag}
             hash_db = hashtag.split(" ")
             for word in hash_db:
-                hashes = Hash()
+                hashes = Hash(word)
                 hashes.hashtag = word
-            db.session.add(hashes)
-            db.session.commit()
+                db.session.add(hashes)
+                db.session.commit()
         else:
             return random100()
     r = requests.get(search_url, params=data, headers=headers).json()
@@ -101,4 +101,5 @@ def song_thumbnail(r):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
