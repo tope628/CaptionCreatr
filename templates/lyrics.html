@@ -5,7 +5,29 @@
 {% block content %}
 <div class="container">
 	{{ lyrics }}
-{% endblock %}
 </div>
+<div id="content">
+
+        <div class="list">
+
+          <div class="product-card">
+            <figure>
+		    <a href="{{ url}}">
+		    <img src="{{ thumbnail }}" onerror="{{ url_for('static', filename='img/default.jpg') }}">
+		    </a> </figure>
+
+	    <a href="{{ url}}">
+            <span class="price">
+		    {{ song }}
+            </span>
+	    </a>
+
+
+          </div>
+
+        </div>
+
+      </div>
+{% endblock %}
 </body>
 </html>
