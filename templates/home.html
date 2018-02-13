@@ -11,14 +11,18 @@
 <h1>Caption Creatr</h1>
 <p>Hi, this is my personal website.</p>
 <div class="wrap">
+<form action="{{ url_for('search') }}" method="post">
    <div class="search">
-      <input type="text" class="searchTerm" placeholder="What are you looking for?">
+      <input type="text" class="searchTerm" name="hashtag" placeholder="What are you looking for?">
       <button type="submit" class="searchButton">
         <i class="fa fa-search"></i>
      </button>
-     <button type="random" class="randomButton">
+	</form>
+<form action="{{ url_for('random100') }}" method="post">
+     <button type="submit" class="randomButton">
         <i class="fa fa-refresh fa-spin"></i>
      </button>
+	</form>
    </div>
 </div>
 <div>
