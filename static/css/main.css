@@ -65,7 +65,8 @@ p.regular {
 }
 .search {
   width: 100%;
-  position: relative
+  position: relative;
+  height: 48px;
 }
 
 .searchTerm {
@@ -73,7 +74,7 @@ p.regular {
   width: 100%;
   border: 3px solid #515BD4;
   padding-left: 10px;
-  height: 40px;
+  height: 100%;
   border-radius: 5px;
   outline: none;
   color: black;
@@ -94,7 +95,7 @@ p.regular {
   position: absolute;
   right: -35px;
   width: 48px;
-  height: 48px;
+  height: 100%;
   border: 1px solid #515BD4;
   background: #515BD4;
   text-align: center;
@@ -125,7 +126,7 @@ p.regular {
   position: absolute;
   right: -75px;
   width: 48px;
-  height: 48px;
+  height: 100%;
   border: 1px solid #515BD4;
   background: #515BD4;
   text-align: center;
