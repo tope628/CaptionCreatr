@@ -59,6 +59,9 @@ p.regular {
 
 .container{
 	display:inline-flex;
+	width: 50%;
+    float: left;
+    margin-left: 15%;
 }
 .search {
   width: 100%;
@@ -110,7 +113,7 @@ p.regular {
 .wrap {
   width: 70%;
   margin: 0 auto;
-  transform: translateX(-10%);
+  transform: translateX(-5%);
 }
 @media only screen and (min-width: 768px) {
   .wrap {
@@ -224,7 +227,7 @@ p.regular {
 }
 
 .sticky {
-  position: fixed;
+  position: relative;
   right: 0;
   bottom: 0;
   left: 0;
