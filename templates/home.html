@@ -2,35 +2,51 @@
 <html lang="en">
 	<head>
 	<meta charset="utf-8">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
 	<title> Caption Creatr </title>
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
-<body>
-	<div class="header">
-		<img src="{{ url_for('static', filename='img/CapCre.png') }}">
+
+	<body>
+		<div class="container-content">
+			
+			<div class="header">
+				<img class="th" src="{{ url_for('static', filename='img/CapCre.png') }}">
+			</div>
+
+			<div class="text">
+				<h2 class="regular"> An Instagram Marketing Tool</h2>
+				<p class="regular"> Engage users with a caption generated from your favorite songs! </p>
+			</div>
+
+			<div class="wrap">
+				<div class="search">
+					<form action="{{ url_for('search') }}" method="post">
+				      	<input type="text" class="searchTerm" name="hashtag" placeholder="What are you looking for? #hashtags, artist, description">
+				      	<button type="submit" class="searchButton">
+				        <i class="fa fa-search"></i>
+				     	</button>
+					</form>
+					<form action="{{ url_for('random100') }}" method="post">
+				     	<button type="submit" class="randomButton">
+				        <i class="fa fa-refresh fa-spin"></i>
+				     	</button>
+				</form>
+				</div>
+		   </div>
+
+			<div class="lyrics">
+				{% block content %}{% endblock %}
+			</div>
+
 		</div>
-<div class="text">
-	<h2> An Instagram Marketing Tool</h2>
-	<p> Engage users with a caption generated from your favorite songs! <p>
-</div>
-<div class="wrap">
-<form action="{{ url_for('search') }}" method="post">
-   <div class="search">
-      <input type="text" class="searchTerm" name="hashtag" placeholder="What are you looking for? #hashtags, artist, description">
-      <button type="submit" class="searchButton">
-        <i class="fa fa-search"></i>
-     </button>
-	</form>
-<form action="{{ url_for('random100') }}" method="post">
-     <button type="submit" class="randomButton">
-        <i class="fa fa-refresh fa-spin"></i>
-     </button>
-	</form>
-   </div>
-</div>
-<div class="lyrics">
-	{% block content %}{% endblock %}
-</div>
-</body>
+
+		<footer class="sticky">
+			<p> Made with ❤️ by <a href="https://www.linkedin.com/in/olatopeagboola">Tope Agboola</a> </p>
+		</footer>
+	</body>
+
 </html>

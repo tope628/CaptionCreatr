@@ -1,34 +1,60 @@
 @import url('https://fonts.googleapis.com/css?family=Amaranth|Bilbo+Swash+Caps|Open+Sans|Roboto');
 
-body{
+body {
   background: white;
   font-family: 'Open Sans', sans-serif;
 }
-h2{
-	display:flex;
-	justify-content:center;
+
+h2.regular {
+  text-align: center;
+  font-size: 25px;
 }
-p{
-	    display: flex;
-    justify-content: center;
-    }
-.header{
-    display: flex;
-    justify-content: center;
-    margin-top: -160px;
-    margin-left: 100px;
+@media screen and (max-width: 738px) {
+  h2.regular {
+    font-size: 20px;
+  }
 }
+
+p.regular {
+  text-align: center;
+  font-size: 15px;
+}
+@media screen and (max-width: 738px) {
+  p.regular {
+    font-size: 15px;
+  }
+}
+
+.header {
+  margin: 0 auto;
+  margin-top: -160px;
+  display: flex;
+  justify-content: center;
+}
+@media screen and (max-width: 767px) {
+  .header {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width: 767px) {
+  img.th {
+    width:90%;
+    height:90%;
+    margin-top: -5em;
+  }
+}
+
 .text{
-    justify-content: center;
-    margin-top: -100px;
-    margin-left: 30px;
-    position:relative;
+  justify-content: center;
+  margin-top: -100px;
+  margin-left: 30px;
+  position:relative;
 }
+
 .lyrics{
-	display:inline-flex;
-    margin-top: 200px;
-    margin-left: 350px;
-    position:absolute;
+  margin: 0 auto;
+  padding-top: 2em;
 }
 
 .container{
@@ -43,12 +69,19 @@ p{
   float: left;
   width: 100%;
   border: 3px solid #515BD4;
-  padding: 5px;
-  height: 20px;
+  padding-left: 10px;
+  height: 40px;
   border-radius: 5px;
   outline: none;
-  color: #9DBF
+  color: black;
+  font-size: 20px;
+}
+@media screen and (min-width: 768px) {
+  .searchTerm {
+    font-size: 14px;
+    height: 40px;
   }
+}
 
 .searchTerm:focus{
   color: #515BD4;
@@ -56,9 +89,9 @@ p{
 
 .searchButton {
   position: absolute;
-  right: -50px;
-  width: 40px;
-  height: 36px;
+  right: -35px;
+  width: 48px;
+  height: 48px;
   border: 1px solid #515BD4;
   background: #515BD4;
   text-align: center;
@@ -66,21 +99,30 @@ p{
   border-radius: 5px;
   cursor: pointer;
   font-size: 20px;
+}
+@media screen and (min-width: 768px) {
+  .searchButton {
+    height: 48px;
+  }
 }
 
 /*Resize the wrap to see the search bar change!*/
-.wrap{
-  width: 30%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.wrap {
+  width: 70%;
+  margin: 0 auto;
+  transform: translateX(-10%);
 }
+@media only screen and (min-width: 768px) {
+  .wrap {
+    width: 30%;
+  }
+}
+
 .randomButton {
   position: absolute;
-  right: -80px;
-  width: 40px;
-  height: 36px;
+  right: -75px;
+  width: 48px;
+  height: 48px;
   border: 1px solid #515BD4;
   background: #515BD4;
   text-align: center;
@@ -89,6 +131,13 @@ p{
   cursor: pointer;
   font-size: 20px;
 }
+@media screen and (min-width: 768px) {
+  .randomButton {
+    height: 48px;
+  }
+}
+
+
 /* Artist info card! */
 #content {
   width:100%;
@@ -165,8 +214,26 @@ p{
 
   }
 }
-img.th {
-      max-width:100%;
-      margin:30px 0;
-  }
 
+
+/* TOPE'S CSS HOTFIXES */
+.container-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sticky {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+  font-size: 20px;
+}
+@media screen and (max-width: 767px) {
+  .sticky {
+    font-size: 15px;
+  }
+}
